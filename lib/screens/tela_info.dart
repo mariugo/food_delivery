@@ -13,6 +13,7 @@ class TelaInfo extends StatefulWidget {
 
 class _TelaInfoState extends State<TelaInfo> {
   var comidaEscolhida = 'PESO';
+  int qtd = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +43,11 @@ class _TelaInfoState extends State<TelaInfo> {
 //            )
           ],
         ),
-        body: ListView(children: [
+        body:
+            ListView(physics: const NeverScrollableScrollPhysics(), children: [
           Stack(children: [
             Container(
-                height: MediaQuery.of(context).size.height - 82.0,
+                height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 color: Colors.transparent),
             Positioned(
@@ -90,12 +92,12 @@ class _TelaInfoState extends State<TelaInfo> {
                         Text(widget.precoComida,
                             style: TextStyle(
                                 fontFamily: 'Montserrat',
-                                fontSize: 20.0,
+                                fontSize: 25.0,
                                 color: Colors.grey)),
                         Container(height: 25.0, color: Colors.grey, width: 1.0),
                         Container(
-                          width: 125.0,
-                          height: 40.0,
+                          width: 140.0,
+                          height: 50.0,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(17.0),
                               color: Color(0xFF7A9BEE)),
@@ -103,7 +105,13 @@ class _TelaInfoState extends State<TelaInfo> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  if (qtd > 0) {
+                                    setState(() {
+                                      qtd--;
+                                    });
+                                  }
+                                }, // REMOVE AN ITEM
                                 child: Container(
                                   height: 25.0,
                                   width: 25.0,
@@ -119,13 +127,17 @@ class _TelaInfoState extends State<TelaInfo> {
                                   ),
                                 ),
                               ),
-                              Text('2',
+                              Text('$qtd',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontFamily: 'Montserrat',
-                                      fontSize: 15.0)),
+                                      fontSize: 18.0)),
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  setState(() {
+                                    qtd++;
+                                  });
+                                }, //ADD AN ITEM
                                 child: Container(
                                   height: 25.0,
                                   width: 25.0,
@@ -191,7 +203,7 @@ class _TelaInfoState extends State<TelaInfo> {
                             color: Colors.black),
                         height: 50.0,
                         child: Center(
-                          child: Text('Total: \$52.00',
+                          child: Text('Total: \$52.00', //CALCULATE TOTAL
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 15.0,
@@ -207,6 +219,7 @@ class _TelaInfoState extends State<TelaInfo> {
   }
 
   Widget _buildInfoCard(String informacao, String info, String unit) {
+    // CHANGE TO FOOD OBJECTS FOOD_MENU.DART
     return InkWell(
         onTap: () {
           selectCard(informacao);

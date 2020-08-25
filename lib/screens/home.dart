@@ -47,20 +47,21 @@ class _HomeState extends State<Home> {
                 height: 40.0,
               ),
               Container(
-                height: MediaQuery.of(context).size.height - 185.0,
+                height: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius:
                       BorderRadius.only(topLeft: Radius.circular(75.0)),
                 ),
                 child: ListView(
+                  physics: const NeverScrollableScrollPhysics(),
                   primary: false,
                   padding: EdgeInsets.only(left: 25.0, right: 20.0),
                   children: <Widget>[
                     Padding(
                         padding: EdgeInsets.only(top: 45.0),
                         child: Container(
-                          height: MediaQuery.of(context).size.height - 300.0,
+                          height: MediaQuery.of(context).size.height,
                           child: ListView(
                             children: <Widget>[
                               _construirMenu('assets/segunda.png',
@@ -74,7 +75,7 @@ class _HomeState extends State<Home> {
                               _construirMenu(
                                   'assets/sexta.png', 'sexta-feira', '\$15,00'),
                               SizedBox(
-                                height: 40.0,
+                                height: 50.0,
                               ),
                               Row(
                                 mainAxisAlignment:
@@ -105,7 +106,8 @@ class _HomeState extends State<Home> {
                                           width: 1.0),
                                       borderRadius: BorderRadius.circular(20.0),
                                     ),
-                                    child: Center(
+                                    child: FlatButton(
+                                      onPressed: () {},
                                       child: Icon(Icons.shopping_basket,
                                           color: Colors.black),
                                     ),
@@ -115,13 +117,13 @@ class _HomeState extends State<Home> {
                                     width: 120.0,
                                     decoration: BoxDecoration(
                                         border: Border.all(
-                                            color: Colors.grey,
                                             style: BorderStyle.solid,
                                             width: 1.0),
                                         borderRadius:
                                             BorderRadius.circular(20.0),
                                         color: Color(0xFF1C1428)),
-                                    child: Center(
+                                    child: FlatButton(
+                                        onPressed: () {},
                                         child: Text('Comprar',
                                             style: TextStyle(
                                                 fontFamily: 'Montserrat',
