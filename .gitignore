@@ -9,6 +9,9 @@
 .history
 .svn/
 
+#Android
+android/settings.gradle
+
 # IntelliJ related
 *.iml
 *.ipr
