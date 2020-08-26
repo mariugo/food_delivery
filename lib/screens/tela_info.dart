@@ -104,7 +104,7 @@ class _TelaInfoState extends State<TelaInfo> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              InkWell(
+                              InkWell( //counter --
                                 onTap: () {
                                   if (qtd > 0) {
                                     setState(() {
@@ -132,7 +132,7 @@ class _TelaInfoState extends State<TelaInfo> {
                                       color: Colors.white,
                                       fontFamily: 'Montserrat',
                                       fontSize: 18.0)),
-                              InkWell(
+                              InkWell( //counter ++
                                 onTap: () {
                                   setState(() {
                                     qtd++;
@@ -203,6 +203,7 @@ class _TelaInfoState extends State<TelaInfo> {
                             color: Colors.black),
                         height: 50.0,
                         child: Center(
+                          //
                           child: Text('Total: \$52.00', //CALCULATE TOTAL
                               style: TextStyle(
                                   color: Colors.white,

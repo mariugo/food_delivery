@@ -64,6 +64,7 @@ class _HomeState extends State<Home> {
                           height: MediaQuery.of(context).size.height,
                           child: ListView(
                             children: <Widget>[
+                              //menu foods and days
                               _construirMenu('assets/segunda.png',
                                   'segunda-feira', '\Frango'),
                               _construirMenu(
@@ -107,6 +108,7 @@ class _HomeState extends State<Home> {
                                       borderRadius: BorderRadius.circular(20.0),
                                     ),
                                     child: FlatButton(
+                                      //button shopping basket
                                       onPressed: () {},
                                       child: Icon(Icons.shopping_basket,
                                           color: Colors.black),
@@ -123,6 +125,7 @@ class _HomeState extends State<Home> {
                                             BorderRadius.circular(20.0),
                                         color: Color(0xFF1C1428)),
                                     child: FlatButton(
+                                      //Button BUY
                                         onPressed: () {},
                                         child: Text('Comprar',
                                             style: TextStyle(
