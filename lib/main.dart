@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/screens/home.dart';
+import 'package:fooddelivery/screens/splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,6 +16,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         //CREATE A SPLASH SCREEN AS HOME
-        home: Home());
+        home: SplashScreen());
   }
 }

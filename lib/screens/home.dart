@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/screens/tela_info.dart';
+import 'package:fooddelivery/screens/splash.dart';
 
 class Home extends StatefulWidget {
   @override
