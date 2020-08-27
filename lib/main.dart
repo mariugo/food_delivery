@@ -16,6 +16,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         //CREATE A SPLASH SCREEN AS HOME
-        home: SplashScreen());
+        home: Splash());
   }
 }
