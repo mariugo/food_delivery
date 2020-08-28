@@ -98,42 +98,42 @@ class _HomeState extends State<Home> {
 //                                          color: Colors.black),
 //                                    ),
 //                                  ),
-                                  Container(
-                                    height: 65.0,
-                                    width: 60.0,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: Colors.grey,
-                                          style: BorderStyle.solid,
-                                          width: 1.0),
-                                      borderRadius: BorderRadius.circular(20.0),
-                                    ),
-                                    child: FlatButton(
-                                      //button shopping basket
-                                      onPressed: () {},
-                                      child: Icon(Icons.shopping_basket,
-                                          color: Colors.black),
-                                    ),
-                                  ),
-                                  Container(
-                                    height: 65.0,
-                                    width: 120.0,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            style: BorderStyle.solid,
-                                            width: 1.0),
-                                        borderRadius:
-                                            BorderRadius.circular(20.0),
-                                        color: Color(0xFF1C1428)),
-                                    child: FlatButton(
-                                      //Button BUY
-                                        onPressed: () {},
-                                        child: Text('Comprar',
-                                            style: TextStyle(
-                                                fontFamily: 'Montserrat',
-                                                color: Colors.white,
-                                                fontSize: 15.0))),
-                                  )
+//                                   Container(
+//                                     height: 65.0,
+//                                     width: 60.0,
+//                                     decoration: BoxDecoration(
+//                                       border: Border.all(
+//                                           color: Colors.grey,
+//                                           style: BorderStyle.solid,
+//                                           width: 1.0),
+//                                       borderRadius: BorderRadius.circular(20.0),
+//                                     ),
+//                                     child: FlatButton(
+//                                       //button shopping basket
+//                                       onPressed: () {},
+//                                       child: Icon(Icons.shopping_basket,
+//                                           color: Colors.black),
+//                                     ),
+//                                   ),
+                                  // Container(
+                                  //   height: 65.0,
+                                  //   width: 120.0,
+                                  //   decoration: BoxDecoration(
+                                  //       border: Border.all(
+                                  //           style: BorderStyle.solid,
+                                  //           width: 1.0),
+                                  //       borderRadius:
+                                  //           BorderRadius.circular(20.0),
+                                  //       color: Color(0xFF1C1428)),
+                                  //   child: FlatButton(
+                                  //     //Button BUY
+                                  //       onPressed: () {},
+                                  //       child: Text('Comprar',
+                                  //           style: TextStyle(
+                                  //               fontFamily: 'Montserrat',
+                                  //               color: Colors.white,
+                                  //               fontSize: 15.0))),
+                                  // )
                                 ],
                               )
                             ],
