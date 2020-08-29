@@ -44,7 +44,7 @@ class _Splash extends State<Splash> {
       print(isConnect);
       return  SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.teal.shade100,
+          backgroundColor: Color(0xFF7A9BEE),
           body: Container(
             child: Center(
               child: Padding(
@@ -73,7 +73,7 @@ class _Splash extends State<Splash> {
                               style: TextStyle(
                                 fontFamily: 'Montserrat',
                                 fontSize: 30,
-                                color: Colors.teal.shade900,
+                                color: Colors.white,
                               ),
                               textAlign: TextAlign.center,
                             ),
