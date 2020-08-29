@@ -71,9 +71,9 @@ class _Splash extends State<Splash> {
                             Text(
                               'Food Delivery',
                               style: TextStyle(
-                                fontFamily: 'Montserrat',
+                                fontFamily: 'Montserrat-Bold',
                                 fontSize: 30,
-                                color: Colors.teal.shade900,
+                                color: Colors.white,
                               ),
                               textAlign: TextAlign.center,
                             ),
