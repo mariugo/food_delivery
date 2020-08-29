@@ -44,7 +44,7 @@ class _Splash extends State<Splash> {
       print(isConnect);
       return  SafeArea(
         child: Scaffold(
-          backgroundColor: Color(0xFF7A9BEE),
+          backgroundColor: Color(0xFF21BFBD),
           body: Container(
             child: Center(
               child: Padding(
