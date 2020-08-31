@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:fooddelivery/screens/tela_info.dart';
 import 'package:fooddelivery/models/order.dart';
 import 'package:fooddelivery/models/food_menu.dart';
-import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -12,32 +13,17 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int statusCesta = 0;
-  String _platformVersion = 'Unknown';
 
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await FlutterOpenWhatsapp.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
+  //whatsapp_unilink dependencie method
+  launchWhatsApp() async {
+    final link = WhatsAppUnilink(
+      phoneNumber: '+55-(17)996097839',
+      text: "Mensagem de teste: Food Delivery App",
+    );
+    // Convert the WhatsAppUnilink instance to a string.
+    // Use either Dart's string interpolation or the toString() method.
+    // The "launch" method is part of "url_launcher".
+    await launch('$link');
   }
 
   @override
@@ -164,8 +150,7 @@ class _HomeState extends State<Home> {
                                       //Button BUY
                                         onPressed: () {
                                           //open whatsapp and send order message
-                                          FlutterOpenWhatsapp.sendSingleMessage("5517996097839", "teste");
-                                          print("------------- \nRunning on: $_platformVersion\n");
+                                          launchWhatsApp();
                                         },
                                         child: Text('Comprar',
                                             style: TextStyle(

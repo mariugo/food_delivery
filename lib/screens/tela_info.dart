@@ -17,10 +17,10 @@ class _TelaInfoState extends State<TelaInfo> {
   var comidaEscolhida = 'PESO';
   int qtd = 0;
   double valTotal = 0;
-  //static FoodMenu produto = FoodMenu();
+  //static FoodMenu produto = FoodMenu(); //don't work
   FoodMenu produto = FoodMenu();
   Order pedido = Order();
-  //double preco = produto.price.toDouble();
+  //double preco = produto.price.toDouble(); //don't work
   double preco = 0;
 
   @override
