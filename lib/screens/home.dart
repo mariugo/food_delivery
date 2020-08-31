@@ -17,8 +17,8 @@ class _HomeState extends State<Home> {
   //whatsapp_unilink dependencie method
   launchWhatsApp() async {
     final link = WhatsAppUnilink(
-      phoneNumber: '+55-(17)996097839',
-      text: "Mensagem de teste: Food Delivery App",
+      phoneNumber: '+55-(17)996427507', //change number for user telefone?
+      text: "Mensagem de teste: Food Delivery App", //change message for order content
     );
     // Convert the WhatsAppUnilink instance to a string.
     // Use either Dart's string interpolation or the toString() method.

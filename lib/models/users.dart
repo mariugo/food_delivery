@@ -4,13 +4,15 @@ class Users {
    String endereco;
    String companhia;
    String token;
+   String telefone;
 
   Users({
     this.endereco,
     this.companhia,
     this.nome,
     this.uid,
-    this.token
+    this.token,
+    this.telefone
   });
 
    Map toMap(Users user) {
@@ -20,6 +22,7 @@ class Users {
     data['endereco'] = user.endereco;
     data['companhia'] = user.companhia;
     data['token'] = user.token;
+    data['telefone'] = user.telefone;
     return data;
   }
 
@@ -29,5 +32,6 @@ class Users {
     this.endereco = mapData['endereco'];
     this.companhia = mapData['companhia'];
     this.token = mapData['token'];
+    this.telefone = mapData['telefone'];
   }
 }
