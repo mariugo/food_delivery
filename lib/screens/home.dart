@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fooddelivery/screens/tela_info.dart';
-import 'package:fooddelivery/screens/splash.dart';
+import 'package:fooddelivery/models/order.dart';
+import 'package:fooddelivery/models/food_menu.dart';
+import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -8,6 +11,35 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int statusCesta = 0;
+  String _platformVersion = 'Unknown';
+
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
+
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> initPlatformState() async {
+    String platformVersion;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      platformVersion = await FlutterOpenWhatsapp.platformVersion;
+    } on PlatformException {
+      platformVersion = 'Failed to get platform version.';
+    }
+
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) return;
+
+    setState(() {
+      _platformVersion = platformVersion;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -66,8 +98,9 @@ class _HomeState extends State<Home> {
                           child: ListView(
                             children: <Widget>[
                               //menu foods and days
+                              //path image/ food name/ price
                               _construirMenu('assets/segunda.png',
-                                  'segunda-feira', '\Frango'),
+                                  'segunda-feira', '\$12,00'),
                               _construirMenu(
                                   'assets/terca.png', 'terça-feira', '\$15,00'),
                               _construirMenu('assets/quarta.png',
@@ -110,7 +143,9 @@ class _HomeState extends State<Home> {
                                     ),
                                     child: FlatButton(
                                       //button shopping basket
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        //shopping basket status
+                                      },
                                       child: Icon(Icons.shopping_basket,
                                           color: Colors.black),
                                     ),
@@ -127,7 +162,11 @@ class _HomeState extends State<Home> {
                                         color: Color(0xFF1C1428)),
                                     child: FlatButton(
                                       //Button BUY
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          //open whatsapp and send order message
+                                          FlutterOpenWhatsapp.sendSingleMessage("5517996097839", "teste");
+                                          print("------------- \nRunning on: $_platformVersion\n");
+                                        },
                                         child: Text('Comprar',
                                             style: TextStyle(
                                                 fontFamily: 'Montserrat',
@@ -187,7 +226,9 @@ class _HomeState extends State<Home> {
                 IconButton(
                     icon: Icon(Icons.info),
                     color: Colors.black45,
-                    onPressed: () {})
+                    onPressed: () {
+
+                    })
               ],
             )));
   }

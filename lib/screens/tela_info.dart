@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fooddelivery/models/order.dart';
+import 'package:fooddelivery/models/food_menu.dart';
 
 class TelaInfo extends StatefulWidget {
   final heroTag;
@@ -14,6 +16,12 @@ class TelaInfo extends StatefulWidget {
 class _TelaInfoState extends State<TelaInfo> {
   var comidaEscolhida = 'PESO';
   int qtd = 0;
+  double valTotal = 0;
+  //static FoodMenu produto = FoodMenu();
+  FoodMenu produto = FoodMenu();
+  Order pedido = Order();
+  //double preco = produto.price.toDouble();
+  double preco = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +109,7 @@ class _TelaInfoState extends State<TelaInfo> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(17.0),
                               color: Color(0xFF7A9BEE)),
-                          child: Row(
+                          child: Row( //QTD
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                               InkWell( //counter --
@@ -111,6 +119,7 @@ class _TelaInfoState extends State<TelaInfo> {
                                       qtd--;
                                     });
                                   }
+                                  valTotal = qtd * preco; //update total
                                 }, // REMOVE AN ITEM
                                 child: Container(
                                   height: 25.0,
@@ -137,6 +146,7 @@ class _TelaInfoState extends State<TelaInfo> {
                                   setState(() {
                                     qtd++;
                                   });
+                                  valTotal = qtd * preco; //update total
                                 }, //ADD AN ITEM
                                 child: Container(
                                   height: 25.0,
@@ -203,8 +213,8 @@ class _TelaInfoState extends State<TelaInfo> {
                             color: Colors.black),
                         height: 50.0,
                         child: Center(
-                          //
-                          child: Text('Total: \$52.00', //CALCULATE TOTAL
+                          //TOTAL
+                          child: Text('Total: $valTotal', //CALCULATE TOTAL
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 15.0,
@@ -289,4 +299,5 @@ class _TelaInfoState extends State<TelaInfo> {
       comidaEscolhida = informacao;
     });
   }
+
 }
