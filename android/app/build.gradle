@@ -57,6 +57,9 @@ flutter {
 dependencies {
     // add the Firebase SDK for Google Analytics
     //implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
 }
 
 //apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
