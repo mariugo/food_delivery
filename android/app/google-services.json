@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "335497329996-3ptkao3i2lg7lbk19odqat314fatogb0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mariugo.fooddelivery",
+            "certificate_hash": "28a49f1729c4b14de57720f1fde31920c8d708da"
+          }
+        },
+        {
+          "client_id": "335497329996-i311ltiaveijkdebaol52g8nhtgecppk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mariugo.fooddelivery",
+            "certificate_hash": "db922e7b21be47ea2a0cd9da049e3e5dcc389cb1"
+          }
+        },
+        {
           "client_id": "335497329996-v54vu0bq57e5mu0qrpovgjneng01ak97.apps.googleusercontent.com",
           "client_type": 3
         }
