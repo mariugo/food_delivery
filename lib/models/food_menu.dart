@@ -13,5 +13,3 @@ class FoodMenu {
     this.description,
   });
 }
-
-

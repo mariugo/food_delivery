@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:fooddelivery/screens/home.dart';
 
 class Splash extends StatefulWidget {
@@ -13,7 +13,7 @@ class _Splash extends State<Splash> {
 
   Future<Widget> tryInternetConnection() async {
     // redirect screen after try internet connection
-    try{
+    try {
       print('try');
       final result = await InternetAddress.lookup('google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
@@ -21,7 +21,7 @@ class _Splash extends State<Splash> {
         isConnect = true;
         print(isConnect);
       }
-    } on SocketException catch (_){
+    } on SocketException catch (_) {
       print('catch');
       print('not connected');
       print(isConnect);
@@ -31,7 +31,7 @@ class _Splash extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     tryInternetConnection();
-    if(isConnect == true){
+    if (isConnect == true) {
       //is connected
       //return home screen
       print('if -> connection true');
@@ -42,7 +42,7 @@ class _Splash extends State<Splash> {
       //Return Splash Screen
       print('else -> connection false');
       print(isConnect);
-      return  SafeArea(
+      return SafeArea(
         child: Scaffold(
           backgroundColor: Color(0xFF21BFBD),
           body: Container(
@@ -56,7 +56,7 @@ class _Splash extends State<Splash> {
                       children: <Widget>[
                         Image(
                           //Logo image
-                          image: AssetImage('assets/logo.png'),
+                          image: AssetImage('assets/logo.svg'),
                           semanticLabel: 'Prato e talheres',
                           width: 300,
                           height: 160,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/models/order.dart';
 import 'package:fooddelivery/models/food_menu.dart';
 
 class TelaInfo extends StatefulWidget {
@@ -19,7 +18,6 @@ class _TelaInfoState extends State<TelaInfo> {
   double valTotal = 0;
   //static FoodMenu produto = FoodMenu(); //don't work
   FoodMenu produto = FoodMenu();
-  Order pedido = Order();
   //double preco = produto.price.toDouble(); //don't work
   double preco = 0;
 
@@ -109,10 +107,12 @@ class _TelaInfoState extends State<TelaInfo> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(17.0),
                               color: Color(0xFF7A9BEE)),
-                          child: Row( //QTD
+                          child: Row(
+                            //QTD
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              InkWell( //counter --
+                              InkWell(
+                                //counter --
                                 onTap: () {
                                   if (qtd > 0) {
                                     setState(() {
@@ -141,7 +141,8 @@ class _TelaInfoState extends State<TelaInfo> {
                                       color: Colors.white,
                                       fontFamily: 'Montserrat',
                                       fontSize: 18.0)),
-                              InkWell( //counter ++
+                              InkWell(
+                                //counter ++
                                 onTap: () {
                                   setState(() {
                                     qtd++;
@@ -299,5 +300,4 @@ class _TelaInfoState extends State<TelaInfo> {
       comidaEscolhida = informacao;
     });
   }
-
 }

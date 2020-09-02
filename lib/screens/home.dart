@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:fooddelivery/screens/tela_info.dart';
-import 'package:fooddelivery/models/order.dart';
-import 'package:fooddelivery/models/food_menu.dart';
-import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -18,7 +15,8 @@ class _HomeState extends State<Home> {
   launchWhatsApp() async {
     final link = WhatsAppUnilink(
       phoneNumber: '+55-(17)996427507', //change number for user telefone?
-      text: "Mensagem de teste: Food Delivery App", //change message for order content
+      text:
+          "Mensagem de teste: Food Delivery App", //change message for order content
     );
     // Convert the WhatsAppUnilink instance to a string.
     // Use either Dart's string interpolation or the toString() method.
@@ -38,6 +36,11 @@ class _HomeState extends State<Home> {
                   iconSize: 30.0,
                   alignment: Alignment.centerLeft,
                   icon: Icon(Icons.menu),
+                  /*SIDE BAR: Nome, endereço,
+                  Forma de pgto: font.awesome icons
+                  horarário
+                  whatsapp
+                   */
                   color: Colors.white,
                   onPressed: () {},
                 ),
@@ -147,7 +150,7 @@ class _HomeState extends State<Home> {
                                             BorderRadius.circular(20.0),
                                         color: Color(0xFF1C1428)),
                                     child: FlatButton(
-                                      //Button BUY
+                                        //Button BUY
                                         onPressed: () {
                                           //open whatsapp and send order message
                                           launchWhatsApp();
@@ -211,9 +214,7 @@ class _HomeState extends State<Home> {
                 IconButton(
                     icon: Icon(Icons.info),
                     color: Colors.black45,
-                    onPressed: () {
-
-                    })
+                    onPressed: () {})
               ],
             )));
   }

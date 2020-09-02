@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/screens/home.dart';
 import 'package:fooddelivery/screens/splash.dart';
 
 void main() {
